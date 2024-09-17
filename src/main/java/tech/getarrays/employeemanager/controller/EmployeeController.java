@@ -55,7 +55,7 @@ public class EmployeeController {
         return new  ResponseEntity<>(updateEmployee , HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/employee/ {id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployeeById(@PathVariable("id") Long id) {
        employeeService.deleteEmployeeById(id);
        return ResponseEntity.ok(HttpStatus.OK);  // This is equivalent to returning a 200 OK status.

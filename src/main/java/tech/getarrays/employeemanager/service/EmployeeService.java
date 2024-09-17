@@ -7,6 +7,8 @@ import tech.getarrays.employeemanager.Exceotions.UserNotFoundException;
 import tech.getarrays.employeemanager.entity.Employee;
 import tech.getarrays.employeemanager.reposetry.EmployeeRepo;
 import java.util.List;
+import java.util.UUID;
+
 
 
 @Service
@@ -20,6 +22,7 @@ public class EmployeeService {
     }
 
     public Employee AddEmployee(Employee employee){
+        employee.setEmployeeCode(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
     }
 
